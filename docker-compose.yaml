@@ -1,0 +1,12 @@
+version: '3'
+services:
+    suryoyo_translate:
+        build:
+            context: ./source
+            dockerfile: ./Dockerfile
+        image: suryoyo_translate:latest
+        container_name: suryoyo_translate
+        volumes:
+            - "./logs:/opt/server/logs"
+        ports:
+            - "9812:8000"
