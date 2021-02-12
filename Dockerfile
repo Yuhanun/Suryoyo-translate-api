@@ -1,7 +1,7 @@
 FROM rust:latest
 
 # Cargo init requires this.
-ENV USER aioescrow_payment_server
+ENV USER suryoyo_translate_db
 
 # Set default to nightly
 RUN rustup default nightly
