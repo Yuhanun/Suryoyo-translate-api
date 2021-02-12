@@ -24,5 +24,7 @@ RUN echo " " >> /opt/server/src/main.rs
 # Build it.
 RUN /bin/bash -c "cd /opt/server && cargo build --release"
 
+RUN chmod +x /entrypoint.sh
+
 # Run entrypoint.sh
 CMD ["/entrypoint.sh"]
