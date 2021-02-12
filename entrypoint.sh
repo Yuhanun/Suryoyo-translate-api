@@ -1,5 +1,4 @@
 #!/bin/bash
 
-cd /opt/payment-server
-# cargo run --release
-bash
+cd /opt/server
+cargo run --release
