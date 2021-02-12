@@ -1,12 +1,25 @@
 version: '3'
 services:
+    suryoyo_database:
+        image: postgres:latest
+        env_file:
+            - database.env
+        volumes:
+            - database-data:/var/lib/postgresql/data/
+        ports:
+            - "9128:5432"
+
     suryoyo_translate:
         build:
-            context: ./source
+            context: .
             dockerfile: ./Dockerfile
+        restart: "unless-stopped"
         image: suryoyo_translate:latest
         container_name: suryoyo_translate
-        volumes:
-            - "./logs:/opt/server/logs"
+        # volumes:
+            # - "./logs:/opt/server/logs"
         ports:
-            - "9812:8000"
+            - "9829:8000"
+
+volumes:
+    database-data: 
